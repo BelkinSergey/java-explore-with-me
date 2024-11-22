@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StatOutDto {
 
-   private String app;
+    private String app;
 
     private String uri;
 
