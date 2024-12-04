@@ -17,7 +17,6 @@ import static ru.practicum.constants.DateTime.DATE_TIME_PATTERN;
 @NoArgsConstructor
 public class UpdateEventIntoDto {
 
-
     @Size(min = 20, max = 2000, groups = Marker.OnUpdate.class)
     private String annotation;
 

@@ -38,7 +38,6 @@ public class EventOutFullDto {
 
     private UserShortDto initiator;
 
-
     private Location location;
 
     private Boolean paid;

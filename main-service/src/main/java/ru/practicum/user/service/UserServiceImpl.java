@@ -1,10 +1,10 @@
 package ru.practicum.user.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.practicum.exception.NotFoundException;
 import ru.practicum.user.dao.UserRepository;
 import ru.practicum.user.dto.UserIntoDto;
 import ru.practicum.user.dto.UserOutDto;
@@ -12,6 +12,7 @@ import ru.practicum.user.mapper.UserMapper;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -40,9 +41,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(Long userId) {
-        if (!userRepository.existsById(userId)) {
-            throw new NotFoundException(String.format("Нет пользователя по id %d", userId));
-        }
         userRepository.deleteById(userId);
+        log.info("Пользователь с id = {} успешно удален", userId);
     }
 }

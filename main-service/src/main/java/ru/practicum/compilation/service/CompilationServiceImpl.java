@@ -1,6 +1,5 @@
 package ru.practicum.compilation.service;
 
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -48,8 +47,6 @@ public class CompilationServiceImpl implements CompilationService {
     @Override
     public void delete(Long compId) {
         log.info("Запрос на удаление подборки администратором с id = {}", compId);
-        repository.findById(compId)
-                .orElseThrow(() -> new NotFoundException(String.format("Подборки с id = {} нет.", compId)));
         repository.deleteById(compId);
         log.info("Подборка с id = {} успешно удалена администратором", compId);
     }

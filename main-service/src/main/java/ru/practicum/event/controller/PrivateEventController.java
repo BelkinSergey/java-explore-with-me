@@ -49,6 +49,7 @@ public class PrivateEventController {
     }
 
     @GetMapping("/{eventId}")
+    @ResponseStatus(HttpStatus.OK)
     public EventOutFullDto getEventByOwner(@PathVariable @Positive Long userId, @PathVariable @Positive Long eventId) {
         return service.getEventByUser(userId, eventId);
     }

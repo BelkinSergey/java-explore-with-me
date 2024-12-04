@@ -38,9 +38,6 @@ public class CategoryServiceImpl implements CategoryService {
     @Transactional
     @Override
     public void delete(Long catId) {
-        if (!repository.existsById(catId)) {
-            throw new NotFoundException(String.format("Нет такой категории по id %d", catId));
-        }
         List<Event> events = eventRepository.findAllByCategoryId(catId);
         if (!events.isEmpty()) {
             throw new DataIntegrityViolationException("Нельзя удалить категорию, с которой связаны события");

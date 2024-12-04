@@ -34,7 +34,6 @@ public class EventMapper {
                 eventIntoDto.getTitle(),
                 0,
                 0L
-
         );
     }
 
@@ -74,5 +73,4 @@ public class EventMapper {
 
         );
     }
-
 }

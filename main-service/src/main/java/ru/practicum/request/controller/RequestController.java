@@ -28,6 +28,7 @@ public class RequestController {
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<RequestOutDto> getAllRequests(@PathVariable @Positive final Long userId) {
         return service.getAllRequests(userId);
     }

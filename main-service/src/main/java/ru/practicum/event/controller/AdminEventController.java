@@ -32,6 +32,7 @@ public class AdminEventController {
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<EventOutFullDto> getEventsByAdminParams(
             @RequestParam(required = false) List<Long> users,
             @RequestParam(required = false) List<String> states,
