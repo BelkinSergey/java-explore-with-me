@@ -189,5 +189,15 @@
 			</build>
 		</profile>
 	</profiles>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>6.5.2.Final</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
 
 </project>
