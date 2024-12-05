@@ -64,9 +64,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void delete(Long userId, Long commentId) {
-        User user = checkUser(userId);
-        Comment comment = checkComment(commentId);
-        checkAuthor(user, comment);
         repository.deleteById(commentId);
     }
 
@@ -80,7 +77,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void deleteCommentByAdmin(Long commentId) {
-        checkComment(commentId);
         repository.deleteById(commentId);
     }
 
